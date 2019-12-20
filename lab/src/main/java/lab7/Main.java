@@ -2,5 +2,7 @@ package lab7;
 import java.util.Scanner;
 
 public class Main {
-    //gitwatch
+    public static void main(String[] args){
+        ZMQ.Context 
+    }
 }
