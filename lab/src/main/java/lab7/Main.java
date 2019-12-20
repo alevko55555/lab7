@@ -17,7 +17,10 @@ public class Main {
         for (update_nbr = 0; update_nbr < 100; update_nbr++) {
             String string = subscriber.recvStr(0).trim();
             StringTokenizer sscanf = new StringTokenizer(string, "");
-            int zipcode = Integer
+            int zipcode = Integer.valueOf(sscanf.nextToken());
+            int temperature = Integer.valueOf(sscanf.nextToken());
+            total_temp += temperature;
         }
+        System.o
     }
 }
