@@ -9,6 +9,7 @@ public class Main {
         ZMQ.Context context = ZMQ.context(1);
         ZMQ.Socket subscriber = context.socket(SocketType.SUB);
         subscriber.connect("tcp://locallhost:5556");
-        String filter = (args.length)
+        String filter = (args.length > 0) ? args[0] : "10001";
+        
     }
 }
