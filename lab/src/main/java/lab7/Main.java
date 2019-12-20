@@ -3,6 +3,7 @@ import org.zeromq.SocketType;
 import org.zeromq.ZMQ;
 
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args){
@@ -13,6 +14,10 @@ public class Main {
         subscriber.subscribe(filter.getBytes());
         int update_nbr;
         long total_temp = 0;
-        for (update_nbr = 0; update_nbr < 100; update_nbr)
+        for (update_nbr = 0; update_nbr < 100; update_nbr++) {
+            String string = subscriber.recvStr(0).trim();
+            StringTokenizer sscanf = new StringTokenizer(string, "");
+            int zipcode = Integer
+        }
     }
 }
