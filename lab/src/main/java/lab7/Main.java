@@ -9,6 +9,6 @@ public class Main {
         ZMQ.Context context = ZMQ.context(1);
         ZMQ.Socket subscriber = context.socket(SocketType.SUB);
         subscriber.connect("tcp://locallhost:5556");
-        
+        String filter = ()
     }
 }
