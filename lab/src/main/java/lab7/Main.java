@@ -21,6 +21,8 @@ public class Main {
             int temperature = Integer.valueOf(sscanf.nextToken());
             total_temp += temperature;
         }
-        System.o
+        System.out.println("Average temrature for zipcode" + filter + "was" +(int)(total_temp/update_nbr));
+        subscriber.close();
+        context.term();
     }
 }
