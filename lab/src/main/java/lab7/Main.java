@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args){
         ZMQ.Context context = ZMQ.context(1);
         ZMQ.Socket subscriber = context.socket(SocketType.SUB);
-        subscriber.connect()
+        subscriber.connect("tcp://locallhost:5556");
+        
     }
 }
