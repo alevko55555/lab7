@@ -11,6 +11,8 @@ public class Main {
         subscriber.connect("tcp://locallhost:5556");
         String filter = (args.length > 0) ? args[0] : "10001";
         subscriber.subscribe(filter.getBytes());
-        
+        int update_nbr;
+        long total_temp = 0;
+        for (update_nbr = 0; update_nbr < 100; update_nbr)
     }
 }
