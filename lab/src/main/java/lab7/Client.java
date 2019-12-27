@@ -25,7 +25,9 @@ public class Client {
             req.addString(msg);
             req.send(client);
             ZMsg ans = ZMsg.recvMsg(client);
-            
+            String str = ans.popString();
+            System.out.println(str);
+            ans.destroy();
         }
     }
 }
