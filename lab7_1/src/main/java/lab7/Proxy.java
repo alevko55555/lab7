@@ -5,6 +5,7 @@ import org.zeromq.ZContext;
 import org.zeromq.ZFrame;
 import org.zeromq.ZMQ;
 
+import java.net.Socket;
 import java.util.HashMap;
 
 public class Proxy {
@@ -13,6 +14,8 @@ public class Proxy {
     public static void main(String[] args){
         storageDataHashMap = new HashMap<>();
         ZContext context = new ZContext();
-        ZMQ.Socket frontend = context.createSocket(SocketType.ROUTER)
+        Socket frontend = context.createSocket(SocketType.ROUTER);
+        Socket backend = context.createSocket(SocketType.ROUTER);
+        
     }
 }
