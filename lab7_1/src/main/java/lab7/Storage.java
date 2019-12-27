@@ -25,6 +25,9 @@ public class Storage {
         poller.register(storage, ZMQ.Poller.POLLIN);
         long start = System.currentTimeMillis();
         System.out.println("Storage started!");
-        
+        while (!Thread.currentThread().isInterrupted()) {
+            poller.poll(1);
+            if()
+        }
     }
 }
