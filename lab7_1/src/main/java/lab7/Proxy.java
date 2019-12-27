@@ -1,10 +1,12 @@
 package lab7;
 
-import org.zeromq.*;
+//import org.zeromq.*;
 
-import java.net.Socket;
+//import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
+import org.zeromq.*;
+import org.zeromq.ZMQ.Socket;
 
 public class Proxy {
     private  static HashMap<ZFrame, GetStorageData> storageDataHashMap;
