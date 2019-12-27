@@ -4,4 +4,6 @@ public class GetStorageData {
     private int left;
     private int right;
     private long time;
+
+    
 }
