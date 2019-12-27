@@ -59,6 +59,9 @@ public class Proxy {
                     break;
                 }
                 ZFrame address = msg.unwrap();
+                if(msg){
+
+                }
             }
         }
     }
