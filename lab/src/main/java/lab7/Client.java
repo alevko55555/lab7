@@ -18,19 +18,8 @@ public class Client {
 
         Scanner in = new Scanner(System.in);
 
-        String filter = (args.length > 0) ? args[0] : "10001";
-        subscriber.subscribe(filter.getBytes());
-        int update_nbr;
-        long total_temp = 0;
-        for (update_nbr = 0; update_nbr < 100; update_nbr++) {
-            String string = subscriber.recvStr(0).trim();
-            StringTokenizer sscanf = new StringTokenizer(string, "");
-            int zipcode = Integer.valueOf(sscanf.nextToken());
-            int temperature = Integer.valueOf(sscanf.nextToken());
-            total_temp += temperature;
+        while (true) {
+            String msg = in.nextLine();
         }
-        System.out.println("Average temrature for zipcode" + filter + "was" +(int)(total_temp/update_nbr));
-        subscriber.close();
-        context.term();
     }
 }
