@@ -59,8 +59,10 @@ public class Proxy {
                     break;
                 }
                 ZFrame address = msg.unwrap();
-                if(msg.getFirst().toString().equals()){
-
+                if(msg.getFirst().toString().equals("NOTIFY")){
+                    msg.pop();
+                    int left = Integer.parseInt(msg.popString());
+                    int right
                 }
             }
         }
