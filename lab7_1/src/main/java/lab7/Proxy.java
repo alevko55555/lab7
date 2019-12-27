@@ -20,6 +20,7 @@ public class Proxy {
         backend.setHWM(0);
         frontend.bind("tcp://*:5555");
         backend.bind("tcp://*:5556");
-        ZMQ.Poller items
+        ZMQ.Poller items = context.createPoller(2);
+        items.register()
     }
 }
