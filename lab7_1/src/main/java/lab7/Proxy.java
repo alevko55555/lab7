@@ -13,6 +13,6 @@ public class Proxy {
     public static void main(String[] args){
         storageDataHashMap = new HashMap<>();
         ZContext context = new ZContext();
-        ZMQ.Socket frontend
+        ZMQ.Socket frontend = context.createSocket(SocketType.ROUTER)
     }
 }
