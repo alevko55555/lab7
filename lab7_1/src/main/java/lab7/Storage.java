@@ -1,5 +1,6 @@
 package lab7;
 
+import org.zeromq.SocketType;
 import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
 
@@ -17,6 +18,8 @@ public class Storage {
         right = Integer.parseInt(in.nextLine());
         str = temp.substring(left, right);
         ZContext context = new ZContext();
-        ZMQ.Socket
+        ZMQ.Socket storage = context.createSocket(SocketType.DEALER);
+        storage.setHWM(0);
+        storage.connect()
     }
 }
