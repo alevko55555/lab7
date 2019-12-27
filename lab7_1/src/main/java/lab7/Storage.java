@@ -53,5 +53,5 @@ public class Storage {
         }
     }
 
-    public static String replace
+    public static String replaceChar()
 }
