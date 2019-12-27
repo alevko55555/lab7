@@ -3,6 +3,7 @@ package lab7;
 import org.zeromq.SocketType;
 import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
+import org.zeromq.ZMsg;
 
 import java.util.Scanner;
 
@@ -27,7 +28,14 @@ public class Storage {
         System.out.println("Storage started!");
         while (!Thread.currentThread().isInterrupted()) {
             poller.poll(1);
-            if(System.currentTimeMillis() - start > 5000)
+            if(System.currentTimeMillis() - start > 5000) {
+                ZMsg msg = new ZMsg();
+                msg.addLast("");
+                msg.addLast("NOTIFY");
+                msg.addLast(Integer.toString(left));
+                msg.addLast(Integer.toString(right));
+                msg.addString(left + )
+            }
         }
     }
 }
