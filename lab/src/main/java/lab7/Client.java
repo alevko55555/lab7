@@ -11,6 +11,8 @@ public class Client {
         //ZMQ.Context context = ZMQ.context(1);
         ZContext context = new ZContext();
         ZMQ.Socket client = context.createSocket(SocketType.REQ);
+        client.setHWM(0);
+        client.connect()
         subscriber.connect("tcp://locallhost:5556");
         String filter = (args.length > 0) ? args[0] : "10001";
         subscriber.subscribe(filter.getBytes());
