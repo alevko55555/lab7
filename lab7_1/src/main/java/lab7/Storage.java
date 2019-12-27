@@ -46,9 +46,10 @@ public class Storage {
                     zMsg.addLast("VALUE=" + str.charAt(Integer.parseInt(strings[1]) - left));
                 } else {
                     if(strings[0].equals("PUT")) {
-                        str = replaceChar(str, strings[2], Integer.parseInt(strings))
+                        str = replaceChar(str, strings[2], Integer.parseInt(strings[1]) - left);
                     }
                 }
+                zMsg.send(storage);
             }
         }
     }
