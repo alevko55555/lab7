@@ -11,7 +11,5 @@ public class Storage {
 
     }
 
-    Scanner in = new Scanner(System.in);
-    String temp = in.nextLine();
-    left = Integer.parseInt(in.nextLine());
+    
 }
