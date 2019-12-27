@@ -34,9 +34,9 @@ public class Proxy {
                     String[] strings = msg.getLast().toString().split(" ");
                     boolean found = false;
                     for (Map.Entry<ZFrame, GetStorageData> entry : storageDataHashMap.entrySet()) {
-                        System.out.println(entry.getValue().getLeft());
-                        System.out.println(entry.getValue().getRight());
-                        System.out.println(strings[1]);
+                        //System.out.println(entry.getValue().getLeft());
+                        //System.out.println(entry.getValue().getRight());
+                        //System.out.println(strings[1]);
                         if (entry.getValue().getLeft() <= Integer.parseInt(strings[1]) && entry.getValue().getRight() > Integer.parseInt(strings[1])) {
                             if (!found) {
 
