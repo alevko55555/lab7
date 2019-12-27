@@ -22,6 +22,9 @@ public class Client {
         while (true) {
             String msg = in.nextLine();
             ZMsg req = new ZMsg();
+            req.addString(msg);
+            req.send(client);
+            ZMsg ans 
         }
     }
 }
