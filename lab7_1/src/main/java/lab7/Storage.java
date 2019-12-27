@@ -42,6 +42,7 @@ public class Storage {
                 ZMsg zMsg = ZMsg.recvMsg(storage);
                 zMsg.unwrap();
                 String[] strings = zMsg.pollLast().toString().split(" ");
+                if (strings)
             }
         }
     }
