@@ -57,9 +57,9 @@ public class Proxy {
             }
             if(items.pollin(1)) {
                 ZMsg msg = ZMsg.recvMsg(backend);
-                if(msg == null) {
+                if(msg == null)
                     break;
-                }
+                
                 ZFrame address = msg.unwrap();
                 if(msg.getFirst().toString().equals("NOTIFY")){
                     msg.pop();
