@@ -58,7 +58,7 @@ public class Proxy {
                 if(msg == null) {
                     break;
                 }
-                ZFrame address 
+                ZFrame address = msg.unwrap();
             }
         }
     }
