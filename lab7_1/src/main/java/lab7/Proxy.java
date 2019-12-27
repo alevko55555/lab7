@@ -25,6 +25,11 @@ public class Proxy {
             items.poll();
             if(items.pollin(0)) {
                 ZMsg msg = ZMsg.recvMsg(frontend);
+                if(msg == null) {
+                    break;
+                }
+                String[] strings = msg.getLast().toString().split(" ");
+                
             }
         }
     }
