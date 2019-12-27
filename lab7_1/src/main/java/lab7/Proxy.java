@@ -38,7 +38,7 @@ public class Proxy {
                         if(!found) {
                             System.out.println(entry.getValue().getLeft());
                             System.out.println(entry.getValue().getRight());
-                            System.out
+                            System.out.println(strings[1]);
                             if(System.currentTimeMillis() - entry.getValue().getTime() > 10000) {
                                 storageDataHashMap.remove(entry.getKey());
                                 continue;
