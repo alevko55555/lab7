@@ -53,5 +53,7 @@ public class Storage {
         }
     }
 
-    public static String replaceChar(String string, String)
+    public static String replaceChar(String string, String ch, int i) {
+        
+    }
 }
