@@ -42,8 +42,16 @@ public class Storage {
                 ZMsg zMsg = ZMsg.recvMsg(storage);
                 zMsg.unwrap();
                 String[] strings = zMsg.pollLast().toString().split(" ");
-                if (strings)
+                if (strings[0].equals("GET")) {
+                    zMsg.addLast("VALUE=" + str.charAt(Integer.parseInt(strings[1]) - left));
+                } else {
+                    if(strings[0].equals("PUT")) {
+                        str = replace
+                    }
+                }
             }
         }
     }
+
+    public static String replace
 }
