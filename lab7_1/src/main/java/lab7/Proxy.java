@@ -63,7 +63,7 @@ public class Proxy {
                     msg.pop();
                     int left = Integer.parseInt(msg.popString());
                     int right = Integer.parseInt(msg.popString());
-                    storageDataHashMap.put(address, new )
+                    storageDataHashMap.put(address, new GetStorageData(left, right, System.currentTimeMillis()));
                 }
             }
         }
