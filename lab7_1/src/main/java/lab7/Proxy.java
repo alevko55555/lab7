@@ -17,5 +17,7 @@ public class Proxy {
         ZMQ.Socket frontend = context.createSocket(SocketType.ROUTER);
         ZMQ.Socket backend = context.createSocket(SocketType.ROUTER);
         frontend.setHWM(0);
+        backend.setHWM(0);
+        
     }
 }
