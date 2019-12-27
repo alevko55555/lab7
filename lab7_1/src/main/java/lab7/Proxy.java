@@ -42,6 +42,9 @@ public class Proxy {
                         }
                         found = true;
                         msg.send(backend);
+                        if(strings[0].equals("GET")) {
+                            break;
+                        }
                     }
                 }
             }
