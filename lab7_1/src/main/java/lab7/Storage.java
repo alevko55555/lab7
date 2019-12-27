@@ -20,6 +20,11 @@ public class Storage {
         ZContext context = new ZContext();
         ZMQ.Socket storage = context.createSocket(SocketType.DEALER);
         storage.setHWM(0);
-        storage.connect()
+        storage.connect("tcp://localhost:5556");
+        ZMQ.Poller poller = context.createPoller(1);
+        poller.register(storage, ZMQ.Poller.POLLIN);
+        long start = System.currentTimeMillis();
+        System.out.println("Storage started!");
+        
     }
 }
