@@ -1,6 +1,7 @@
 package lab7;
 
 import org.zeromq.ZContext;
+import org.zeromq.ZMQ;
 
 import java.util.Scanner;
 
@@ -15,6 +16,7 @@ public class Storage {
         left = Integer.parseInt(in.nextLine());
         right = Integer.parseInt(in.nextLine());
         str = temp.substring(left, right);
-        ZContext
+        ZContext context = new ZContext();
+        ZMQ.Socket
     }
 }
