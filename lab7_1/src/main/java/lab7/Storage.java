@@ -38,6 +38,7 @@ public class Storage {
                 msg.send(storage);
                 start = System.currentTimeMillis();
             }
+            if (poller)
         }
     }
 }
