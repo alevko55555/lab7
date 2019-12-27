@@ -1,5 +1,6 @@
 package lab7;
 import org.zeromq.SocketType;
+import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
 
 import java.util.Scanner;
@@ -7,8 +8,9 @@ import java.util.StringTokenizer;
 
 public class Client {
     public static void main(String[] args){
-        ZMQ.Context context = ZMQ.context(1);
-        ZMQ.Socket subscriber = context.socket(SocketType.SUB);
+        //ZMQ.Context context = ZMQ.context(1);
+        ZContext context = new ZContext();
+        ZMQ.Socket client = context.createSocket(SocketType.REQ);
         subscriber.connect("tcp://locallhost:5556");
         String filter = (args.length > 0) ? args[0] : "10001";
         subscriber.subscribe(filter.getBytes());
