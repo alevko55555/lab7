@@ -31,7 +31,9 @@ public class Proxy {
                 }
                 String[] strings = msg.getLast().toString().split(" ");
                 boolean found = false;
-                for(Map.Entry<ZFrame, GetStorageData> entry)
+                for(Map.Entry<ZFrame, GetStorageData> entry : storageDataHashMap.entrySet()) {
+                    if(entry.getValue().getLeft() <= Integer)
+                }
             }
         }
     }
