@@ -12,6 +12,7 @@ public class Proxy {
 
     public static void main(String[] args){
         storageDataHashMap = new HashMap<>();
-        ZContext context = new Z
+        ZContext context = new ZContext();
+        
     }
 }
