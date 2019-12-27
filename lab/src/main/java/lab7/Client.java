@@ -2,6 +2,7 @@ package lab7;
 import org.zeromq.SocketType;
 import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
+import org.zeromq.ZMsg;
 
 import java.util.Scanner;
 import java.util.StringTokenizer;
@@ -20,6 +21,7 @@ public class Client {
 
         while (true) {
             String msg = in.nextLine();
+            ZMsg req = new ZMsg();
         }
     }
 }
