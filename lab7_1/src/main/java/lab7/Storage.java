@@ -36,7 +36,7 @@ public class Storage {
                 msg.addLast(Integer.toString(right));
                 msg.addString(left + "-" + right);
                 msg.send(storage);
-                start
+                start = 
             }
         }
     }
