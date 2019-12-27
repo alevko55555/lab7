@@ -13,7 +13,9 @@ public class Client {
         ZMQ.Socket client = context.createSocket(SocketType.REQ);
         client.setHWM(0);
         client.connect("tcp://localhost:5555");
-        subscriber.connect("tcp://locallhost:5556");
+
+        System.out.println("Client started");
+
         String filter = (args.length > 0) ? args[0] : "10001";
         subscriber.subscribe(filter.getBytes());
         int update_nbr;
