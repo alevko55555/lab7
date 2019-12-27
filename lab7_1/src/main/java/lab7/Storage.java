@@ -38,7 +38,9 @@ public class Storage {
                 msg.send(storage);
                 start = System.currentTimeMillis();
             }
-            if (poller)
+            if (poller.pollin(0)) {
+                ZMsg zMsg
+            }
         }
     }
 }
