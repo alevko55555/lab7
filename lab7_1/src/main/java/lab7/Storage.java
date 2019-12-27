@@ -44,11 +44,11 @@ public class Storage {
                 String[] strings = zMsg.pollLast().toString().split(" ");
                 if (strings[0].equals("GET")) {
                     zMsg.addLast("VALUE=" + str.charAt(Integer.parseInt(strings[1]) - left));
-                } else {
+                } else
                     if(strings[0].equals("PUT")) {
                         str = replaceChar(str, strings[2], Integer.parseInt(strings[1]) - left);
                     }
-                }
+                
                 zMsg.send(storage);
             }
         }
