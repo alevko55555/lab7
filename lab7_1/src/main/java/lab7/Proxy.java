@@ -12,8 +12,8 @@ public class Proxy {
     public static void main(String[] args){
         storageDataHashMap = new HashMap<>();
         ZContext context = new ZContext();
-        ZMQ.Socket frontend = context.createSocket(SocketType.ROUTER);
-        ZMQ.Socket backend = context.createSocket(SocketType.ROUTER);
+        Socket frontend = context.createSocket(SocketType.ROUTER);
+        Socket backend = context.createSocket(SocketType.ROUTER);
         frontend.setHWM(0);
         backend.setHWM(0);
         frontend.bind("tcp://*:5555");
