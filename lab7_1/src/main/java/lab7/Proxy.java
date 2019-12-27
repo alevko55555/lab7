@@ -4,6 +4,7 @@ import org.zeromq.*;
 
 import java.net.Socket;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Proxy {
     private  static HashMap<ZFrame, GetStorageData> storageDataHashMap;
@@ -30,7 +31,7 @@ public class Proxy {
                 }
                 String[] strings = msg.getLast().toString().split(" ");
                 boolean found = false;
-                
+                for(Map.Entry)
             }
         }
     }
