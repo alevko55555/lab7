@@ -46,7 +46,7 @@ public class Storage {
                     zMsg.addLast("VALUE=" + str.charAt(Integer.parseInt(strings[1]) - left));
                 } else {
                     if(strings[0].equals("PUT")) {
-                        str = replace
+                        str = replaceChar(str, strings[2])
                     }
                 }
             }
