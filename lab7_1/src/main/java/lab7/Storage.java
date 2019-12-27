@@ -54,6 +54,6 @@ public class Storage {
     }
 
     public static String replaceChar(String string, String ch, int i) {
-        return string.substring(0, i)
+        return string.substring(0, i) + ch + str.substring(i + 1);
     }
 }
