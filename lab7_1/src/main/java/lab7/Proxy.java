@@ -29,6 +29,7 @@ public class Proxy {
                     break;
                 }
                 String[] strings = msg.getLast().toString().split(" ");
+                boolean found = false;
                 
             }
         }
