@@ -19,38 +19,38 @@ public class Storage {
         right = Integer.parseInt(in.nextLine());
         str = temp.substring(left, right);
         try(ZContext context = new ZContext()) {
-        ZMQ.Socket storage = context.createSocket(SocketType.DEALER);
-        storage.setHWM(0);
-        storage.connect("tcp://localhost:5556");
-        ZMQ.Poller poller = context.createPoller(1);
-        poller.register(storage, ZMQ.Poller.POLLIN);
-        long start = System.currentTimeMillis();
-        System.out.println("Storage started!");
-        while (!Thread.currentThread().isInterrupted()) {
-            poller.poll(1);
-            if (System.currentTimeMillis() - start > 5000) {
-                ZMsg msg = new ZMsg();
-                msg.addLast("");
-                msg.addLast("NOTIFY");
-                msg.addLast(Integer.toString(left));
-                msg.addLast(Integer.toString(right));
-                msg.addString(left + "-" + right);
-                msg.send(storage);
-                start = System.currentTimeMillis();
-            }
-            if (poller.pollin(0)) {
-                ZMsg zMsg = ZMsg.recvMsg(storage);
-                zMsg.unwrap();
-                String[] strings = zMsg.pollLast().toString().split(" ");
-                if (strings[0].equals("GET")) {
-                    zMsg.addLast("VALUE=" + str.charAt(Integer.parseInt(strings[1]) - left));
-                } else if (strings[0].equals("PUT")) {
-                    str = replaceChar(str, strings[2], Integer.parseInt(strings[1]) - left);
+            ZMQ.Socket storage = context.createSocket(SocketType.DEALER);
+            storage.setHWM(0);
+            storage.connect("tcp://localhost:5556");
+            ZMQ.Poller poller = context.createPoller(1);
+            poller.register(storage, ZMQ.Poller.POLLIN);
+            long start = System.currentTimeMillis();
+            System.out.println("Storage started!");
+            while (!Thread.currentThread().isInterrupted()) {
+                poller.poll(1);
+                if (System.currentTimeMillis() - start > 5000) {
+                    ZMsg msg = new ZMsg();
+                    msg.addLast("");
+                    msg.addLast("NOTIFY");
+                    msg.addLast(Integer.toString(left));
+                    msg.addLast(Integer.toString(right));
+                    msg.addString(left + "-" + right);
+                    msg.send(storage);
+                    start = System.currentTimeMillis();
                 }
+                if (poller.pollin(0)) {
+                    ZMsg zMsg = ZMsg.recvMsg(storage);
+                    zMsg.unwrap();
+                    String[] strings = zMsg.pollLast().toString().split(" ");
+                    if (strings[0].equals("GET")) {
+                        zMsg.addLast("VALUE=" + str.charAt(Integer.parseInt(strings[1]) - left));
+                    } else if (strings[0].equals("PUT")) {
+                        str = replaceChar(str, strings[2], Integer.parseInt(strings[1]) - left);
+                    }
 
-                zMsg.send(storage);
+                    zMsg.send(storage);
+                }
             }
-        }
         }
     }
 
