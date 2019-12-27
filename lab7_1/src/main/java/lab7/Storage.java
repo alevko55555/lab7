@@ -40,6 +40,7 @@ public class Storage {
             }
             if (poller.pollin(0)) {
                 ZMsg zMsg = ZMsg.recvMsg(storage);
+                zMsg.unwrap()
             }
         }
     }
