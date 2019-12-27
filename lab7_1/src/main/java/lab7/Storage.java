@@ -18,7 +18,7 @@ public class Storage {
         left = Integer.parseInt(in.nextLine());
         right = Integer.parseInt(in.nextLine());
         str = temp.substring(left, right);
-        ZContext context = new ZContext();
+        try(ZContext context = new ZContext()) {
         ZMQ.Socket storage = context.createSocket(SocketType.DEALER);
         storage.setHWM(0);
         storage.connect("tcp://localhost:5556");
@@ -28,7 +28,7 @@ public class Storage {
         System.out.println("Storage started!");
         while (!Thread.currentThread().isInterrupted()) {
             poller.poll(1);
-            if(System.currentTimeMillis() - start > 5000) {
+            if (System.currentTimeMillis() - start > 5000) {
                 ZMsg msg = new ZMsg();
                 msg.addLast("");
                 msg.addLast("NOTIFY");
@@ -44,13 +44,13 @@ public class Storage {
                 String[] strings = zMsg.pollLast().toString().split(" ");
                 if (strings[0].equals("GET")) {
                     zMsg.addLast("VALUE=" + str.charAt(Integer.parseInt(strings[1]) - left));
-                } else
-                    if(strings[0].equals("PUT")) {
-                        str = replaceChar(str, strings[2], Integer.parseInt(strings[1]) - left);
-                    }
+                } else if (strings[0].equals("PUT")) {
+                    str = replaceChar(str, strings[2], Integer.parseInt(strings[1]) - left);
+                }
 
                 zMsg.send(storage);
             }
+        }
         }
     }
 
