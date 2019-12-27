@@ -27,7 +27,7 @@ public class Storage {
         System.out.println("Storage started!");
         while (!Thread.currentThread().isInterrupted()) {
             poller.poll(1);
-            if()
+            if(System.currentTimeMillis() - )
         }
     }
 }
