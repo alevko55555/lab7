@@ -24,7 +24,8 @@ public class Client {
             ZMsg req = new ZMsg();
             req.addString(msg);
             req.send(client);
-            ZMsg ans 
+            ZMsg ans = ZMsg.recvMsg(client);
+            
         }
     }
 }
