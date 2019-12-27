@@ -36,7 +36,9 @@ public class Proxy {
                 for(Map.Entry<ZFrame, GetStorageData> entry : storageDataHashMap.entrySet()) {
                     if(entry.getValue().getLeft() <= Integer.parseInt(strings[1]) && entry.getValue().getRight() > Integer.parseInt(strings[1])) {
                         if(!found) {
-                            
+                            System.out.println(entry.getValue().getLeft());
+                            System.out.println(entry.getValue().getRight());
+                            System.out
                             if(System.currentTimeMillis() - entry.getValue().getTime() > 10000) {
                                 storageDataHashMap.remove(entry.getKey());
                                 continue;
