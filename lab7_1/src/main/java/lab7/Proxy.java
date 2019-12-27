@@ -47,7 +47,18 @@ public class Proxy {
                         }
                     }
                 }
-                
+                if(!found) {
+                    msg.pollLast();
+                    msg.addLast("No value with such index");
+                    msg.send(frontend);
+                }
+            }
+            if(items.pollin(1)) {
+                ZMsg msg = ZMsg.recvMsg(backend);
+                if(msg == null) {
+                    break;
+                }
+                ZFrame address 
             }
         }
     }
