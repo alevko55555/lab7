@@ -48,7 +48,7 @@ public class Storage {
                     if(strings[0].equals("PUT")) {
                         str = replaceChar(str, strings[2], Integer.parseInt(strings[1]) - left);
                     }
-                
+
                 zMsg.send(storage);
             }
         }
