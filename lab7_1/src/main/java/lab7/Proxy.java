@@ -62,7 +62,8 @@ public class Proxy {
                 if(msg.getFirst().toString().equals("NOTIFY")){
                     msg.pop();
                     int left = Integer.parseInt(msg.popString());
-                    int right
+                    int right = Integer.parseInt(msg.popString());
+                    storageDataHashMap.put(adress, new)
                 }
             }
         }
