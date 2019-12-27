@@ -5,7 +5,7 @@ import org.zeromq.ZMQ;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class Main {
+public class Client {
     public static void main(String[] args){
         ZMQ.Context context = ZMQ.context(1);
         ZMQ.Socket subscriber = context.socket(SocketType.SUB);
