@@ -1,9 +1,6 @@
 package lab7;
 
-import org.zeromq.SocketType;
-import org.zeromq.ZContext;
-import org.zeromq.ZFrame;
-import org.zeromq.ZMQ;
+import org.zeromq.*;
 
 import java.net.Socket;
 import java.util.HashMap;
@@ -26,7 +23,9 @@ public class Proxy {
         System.out.println("Proxy started!");
         while (!Thread.currentThread().isInterrupted()) {
             items.poll();
-            
+            if(items.pollin(0)) {
+                ZMsg msg = ZMsg.recvMsg(frontend);
+            }
         }
     }
 }
