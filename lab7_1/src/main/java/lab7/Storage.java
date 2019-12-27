@@ -41,7 +41,7 @@ public class Storage {
             if (poller.pollin(0)) {
                 ZMsg zMsg = ZMsg.recvMsg(storage);
                 zMsg.unwrap();
-                String[] strings = zMsg
+                String[] strings = zMsg.pollLast().toString().split(" ");
             }
         }
     }
