@@ -39,7 +39,7 @@ public class Storage {
                 start = System.currentTimeMillis();
             }
             if (poller.pollin(0)) {
-                ZMsg zMsg
+                ZMsg zMsg = ZMsg.recvMsg(storage);
             }
         }
     }
