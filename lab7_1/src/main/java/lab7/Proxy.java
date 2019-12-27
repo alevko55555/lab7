@@ -31,7 +31,7 @@ public class Proxy {
                 }
                 String[] strings = msg.getLast().toString().split(" ");
                 boolean found = false;
-                for(Map.Entry)
+                for(Map.Entry<ZFrame, GetStorageData> entry)
             }
         }
     }
