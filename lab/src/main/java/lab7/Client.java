@@ -16,6 +16,8 @@ public class Client {
 
         System.out.println("Client started");
 
+        Scanner in = new Scanner(System.in);
+
         String filter = (args.length > 0) ? args[0] : "10001";
         subscriber.subscribe(filter.getBytes());
         int update_nbr;
