@@ -40,7 +40,8 @@ public class Proxy {
                             }
                             msg.wrap(entry.getKey().duplicate());
                         }
-                        
+                        found = true;
+                        msg.send(backend);
                     }
                 }
             }
